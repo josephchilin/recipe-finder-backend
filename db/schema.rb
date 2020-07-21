@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_07_20_205732) do
     t.string "name"
     t.string "image_url"
     t.string "instruction"
-    t.integer "yield"
+    t.integer "serving_size"
     t.integer "rating"
     t.integer "user_id"
     t.integer "time"

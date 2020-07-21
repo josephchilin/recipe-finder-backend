@@ -75,7 +75,7 @@ puts "seeding recipes..."
 waffle_1 = Recipe.create(
     cuisine_id: Cuisine.find_by(name: "American").id, 
     name: "Plain Waffles", 
-    yield: 10,
+    serving_size: 10,
     rating: 5,
     user_id: User.all.sample.id,
     time: 35,
@@ -88,7 +88,7 @@ waffle_1 = Recipe.create(
 waffle_2 = Recipe.create(
     cuisine_id: Cuisine.find_by(name: "American").id, 
     name: "Buttermilk Vanilla Waffles", 
-    yield: 3,
+    serving_size: 3,
     rating: 4,
     user_id: User.all.sample.id,
     time: 20,
@@ -100,7 +100,7 @@ waffle_2 = Recipe.create(
 pasta_1 = Recipe.create(
     cuisine_id: Cuisine.find_by(name: "Italian").id, 
     name: "Cacio e Pepe", 
-    yield: 4,
+    serving_size: 4,
     rating: 5,
     user_id: User.all.sample.id,
     time: 20,
@@ -298,7 +298,7 @@ pasta_1_ing_1 = RecipeIngredient.create(
 # t.string "name"
 # t.string "image_url"
 # t.string "instruction"
-# t.integer "yield"
+# t.integer "serving_size"
 # t.integer "rating"
 # t.integer "user_id"
 # t.integer "time"
