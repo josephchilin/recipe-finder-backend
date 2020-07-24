@@ -6,6 +6,7 @@ class RecipesController < ApplicationController
 
     def create
         @recipe = Recipe.create(recipe_params)
+        # byebug
         render json: @recipe
     end
 
@@ -28,6 +29,6 @@ class RecipesController < ApplicationController
     # end
 
     def recipe_params
-        params.require(:recipe).permit(:cuisine_id, :name, :image_url, :instruction, :serving_size, :rating, :user_id, :time)
+        params.permit(:cuisine_id, :name, :image_url, :instruction, :serving_size, :rating, :user_id, :time)
     end
 end
