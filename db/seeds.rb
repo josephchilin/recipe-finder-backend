@@ -33,7 +33,8 @@ ingredients = [
     "Parmigiano-Reggiano",
     "black pepper",
     "spaghetti",
-    "olive oil"
+    "olive oil",
+    "chicken"
 ]
 
 users = [
