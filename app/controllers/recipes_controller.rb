@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
 
     def update 
         @recipe = Recipe.find(params[:id])
-        @recipe.udpate(recipe_params)
+        @recipe.update(recipe_params)
         render json: @recipe
     end
 
