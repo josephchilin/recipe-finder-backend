@@ -54,7 +54,10 @@ ingredients = [
     "chicken breast",
     "tomatoes",
     "basil leaves",
-    "soy sauce"
+    "soy sauce",
+    "bacon",
+    "cheddar cheese",
+    "scallions"
 ]
 
 users = [
@@ -118,6 +121,18 @@ waffle_2 = Recipe.create(
     For the Waffles: Set waffle iron to medium and preheat until the indicator is ready. For an 8-inch square machine, scrape in roughly half the batter. For a 7-inch Belgian machine, scrape in about one-third. Close lid and cook until waffle is golden brown but still steaming, 4 1/2 to 6 minutes depending on the depth and heat of your machine. Serve immediately, with copious amounts of maple syrup, and griddle remaining batter as before."
 )
 
+waffle_3 = Recipe.create(
+    cuisine_id: Cuisine.find_by(name: "American").id, 
+    name: "Bacon, Cheese and Scallion Waffles", 
+    serving_size: 8,
+    rating: 4,
+    user_id: User.find_by(name: "Caryn").id,
+    time: 30,
+    image_url: "https://www.seriouseats.com/recipes/images/2013/12/20131116-bacon-and-cheese-and-scallion-waffle-1.jpg",
+    instruction: "Combine flour, baking soda, baking powder, salt, and sugar in a large bowl and whisk until homogenous. Whisk together eggs, buttermilk, melted butter, and bacon fat in a medium bowl. Pour wet ingredients into dry and mix until just combined and no pockets of dry flour remain. Fold in bacon, cheese, and scallions.
+    Preheat a Belgian waffle iron according to manufacturer's instructions. Spray waffle iron with non-stick cooking spray and cook waffle batter according to manufacturer's instructions, using about 1 cup of batter per waffle. Serve as they're ready with maple syrup, or keep warm on a rack in a 200°F oven while you prepare the remaining waffles."
+)
+
 pasta_1 = Recipe.create(
     cuisine_id: Cuisine.find_by(name: "Italian").id, 
     name: "Cacio e Pepe", 
@@ -158,6 +173,21 @@ chicken_2 = Recipe.create(
     Place chicken in a heavy-duty sealable plastic bag. Add soy sauce mixture, seal bag, and turn to coat chicken. Refrigerate for at least an hour, ideally overnight.
     Remove chicken and set aside. Pour mixture into a small saucepan. Bring to a boil over high heat, then reduce heat to low. Mix cornstarch with 2 tablespoons water and add to pan. Stir until mixture begins to thicken, and gradually stir in enough water (about 1/2 cup) until sauce is the consistency of heavy cream. Remove from heat and set aside.
     Preheat a broiler or grill. Lightly brush chicken pieces on all sides with sauce, and broil or grill about 3 minutes per side. While chicken is cooking, place sauce over high heat and bring to a boil, then reduce heat to a bare simmer, adding water a bit at a time to keep mixture at a pourable consistency. To serve, slice chicken into strips, arrange on plates, and drizzle with sauce."
+)
+
+chicken_3 = Recipe.create(
+    cuisine_id: Cuisine.find_by(name: "Italian").id, 
+    name: "Chicken Parmesan", 
+    serving_size: 6,
+    rating: 5,
+    user_id: User.find_by(name: "Eric").id,
+    time: 75,
+    image_url: "https://static01.nyt.com/images/2017/11/10/dining/chickenparm/chickenparm-articleLarge.jpg",
+    instruction: "Heat oven to 400 degrees. Place cutlets between two pieces of parchment or plastic wrap. Using a kitchen mallet or rolling pin, pound meat to even 1/4-inch-thick slices.
+    Place flour, eggs and panko into three wide, shallow bowls. Season meat generously with salt and pepper. Dip a piece in flour, then eggs, then coat with panko. Repeat until all the meat is coated.
+    Fill a large skillet with 1/2-inch oil. Place over medium-high heat. When oil is hot, fry cutlets in batches, turning halfway through, until golden brown. Transfer to a paper towel-lined plate.
+    Spoon a thin layer of sauce over the bottom of a 9-by-13-inch baking pan. Sprinkle one-third of the Parmesan over sauce. Place half of the cutlets over the Parmesan and top with half the mozzarella pieces. Top with half the remaining sauce, sprinkle with another third of the Parmesan, and repeat layering, ending with a final layer of sauce and Parmesan.
+    Transfer pan to oven and bake until cheese is golden and casserole is bubbling, about 40 minutes. Let cool a few minutes before serving."
 )
 
 water_1 = Recipe.create(
@@ -287,6 +317,68 @@ chicken_2_ing_10 = RecipeIngredient.create(
     measurement_type: "tablespoons"
 )
 
+#==== CHICKEN 3 INGREDIENTS SEED
+chicken_3_ing_1 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "chicken").id,
+    quantity: 2,
+    measurement_type: "pounds"
+)
+
+chicken_3_ing_2 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "all-purpose flour").id,
+    quantity: 0.5,
+    measurement_type: "cup"
+)
+
+chicken_3_ing_3 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "eggs").id,
+    quantity: 3,
+    measurement_type: ""
+)
+
+chicken_3_ing_4 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "panko bread crumbs").id,
+    quantity: 2,
+    measurement_type: "cups"
+)
+
+chicken_3_ing_5 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "kosher salt").id,
+    quantity: 1,
+    measurement_type: "pinch"
+)
+
+chicken_3_ing_6 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "black pepper").id,
+    quantity: 1,
+    measurement_type: "pinch"
+)
+
+chicken_3_ing_7 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "tomato sauce").id,
+    quantity: 5,
+    measurement_type: "cups"
+)
+chicken_3_ing_8 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "Parmigiano-Reggiano").id,
+    quantity: 1,
+    measurement_type: "cup"
+)
+
+chicken_3_ing_9 = RecipeIngredient.create(
+    recipe_id: chicken_3.id,
+    ingredient_id: Ingredient.find_by(name: "mozzarella").id,
+    quantity: 0.5,
+    measurement_type: "pound"
+)
 
 #==== WAFFLE 1 INGREDIENTS SEED
 waffle_1_ing_1 = RecipeIngredient.create(
@@ -419,6 +511,84 @@ waffle_2_ing_10 = RecipeIngredient.create(
     ingredient_id: Ingredient.find_by(name: "vanilla extract").id,
     quantity: 1,
     measurement_type: "teaspoon"
+)
+
+#===== WAFFLE 3 INGREDIENTS SEED
+waffle_3_ing_1 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "all-purpose flour").id,
+    quantity: 2,
+    measurement_type: "cups"
+)
+
+waffle_3_ing_2 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "baking soda").id,
+    quantity: 0.5,
+    measurement_type: "teaspoon"
+)
+
+waffle_3_ing_3 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "baking powder").id,
+    quantity: 1,
+    measurement_type: "teaspoon"
+)
+
+waffle_3_ing_4 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "kosher salt").id,
+    quantity: 1.5,
+    measurement_type: "teaspoons"
+)
+
+waffle_3_ing_5 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "sugar").id,
+    quantity: 2,
+    measurement_type: "tablespoons"
+)
+
+waffle_3_ing_6 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "eggs").id,
+    quantity: 3,
+    measurement_type: ""
+)
+
+waffle_3_ing_7 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "buttermilk").id,
+    quantity: 2,
+    measurement_type: "cups"
+)
+
+waffle_3_ing_8 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "unsalted butter").id,
+    quantity: 2,
+    measurement_type: "tablespoons"
+)
+
+waffle_3_ing_9 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "bacon").id,
+    quantity: 6,
+    measurement_type: "ounces"
+)
+
+waffle_3_ing_10 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "cheddar cheese").id,
+    quantity: 6,
+    measurement_type: "ounces"
+)
+
+waffle_3_ing_11 = RecipeIngredient.create(
+    recipe_id: waffle_3.id,
+    ingredient_id: Ingredient.find_by(name: "scallions").id,
+    quantity: 6,
+    measurement_type: ""
 )
 
 #===== PASTA 1 INGREDIENTS SEED
