@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.1'
 
 
-gem 'httparty', '~> 0.13.7'
+gem 'httparty', '~> 0.21.0'
 
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
